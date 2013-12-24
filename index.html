@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Angular Boilerplate</title>
+    </head>
+    <body data-ng-app='app' data-ng-controller='base.ctrl'>
+        <header>
+            <h1>Angular Boilerplate</h1>
+        </header>
+        
+        <nav>
+            <ul>
+                <li><a href='#first'>First</a></li>
+                <li><a href='#second'>Second</a></li>
+                <li><a href='#third'>Third</a></li>
+            </ul>
+        </nav>
+
+        <section id='container'>
+            <div data-ng-view=''></div>
+        </section>
+
+        <!-- TODO: Should be bundled and minified -->
+        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js'></script>
+        <!-- angular application -->
+        <script src='app/services/services.js'></script>
+        <script src='app/controllers/controllers.js'></script>
+        <script src='app/filters/filters.js'></script>
+        <script src='app/directives/directives.js'></script>
+        <script src='app/app.js'></script>
+        <!-- angular testing -->
+        <script src='test/test.js'></script>
+        <script src='test/mock.js'></script>
+        <script src='test/e2e.mock.js'></script>
+    </body>
+</html>
