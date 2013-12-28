@@ -31,6 +31,32 @@
         <!-- angular testing -->
         <script src='test/test.js'></script>
         <script src='test/mock.js'></script>
-        <script src='test/e2e.mock.js'></script>
+	<script src='test/e2e.mock.js'></script>
+	<!-- templates -->
+	<script typee='text/ng-template' id='index.tpl'>
+		<section>
+			<header>
+				<h2>Index page</h2>
+			</header>
+			<article>
+				<p>This is a index page template.</p>
+			</article>
+		</section>
+	</script>
+
+	<script type='text-ng-template' id='contacts.tpl'>
+		<section>
+			<header>
+				<h2>Contacts</h2>
+			</header>
+			<article>
+				<p>Our contact information will be below
+			</article>
+		</section>
+	</script>
+
+	<script type='text/ng-template' id='notFound404.tpl'>
+		<h2>Error 404: Requestedd page not found</h2>
+	</script>
     </body>
 </html>
