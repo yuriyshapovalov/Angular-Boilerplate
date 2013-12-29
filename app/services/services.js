@@ -16,3 +16,4 @@ services.factory('someService', function() {
         veryCoolFunction: someFunc
     }
 })
+
