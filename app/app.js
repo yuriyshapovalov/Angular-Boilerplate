@@ -1,2 +1,5 @@
-var app = angular.module('app', [])
-    .config()
+angular.module('app', [''])
+    .config(['$routeProvider'], 
+        function($routeProvider){
+        
+        }]);
