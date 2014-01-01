@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+    <title>Angular Boilerplate</title>
+</head>
+<body data-ng-app='app'>
+    <header>
+        <h1><a href="/">Angular Boilerplate</a></h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href='#/first'>First</a></li>
+            <li><a href='#/second'>Second</a></li>
+            <li><a href='#/third'>Third</a></li>
+        </ul>
+    </nav>
+
+    <section id='container'>
+        <div data-ng-view=''></div>
+    </section>
+
+    <!-- TODO: Should be bundled and minified -->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js'></script>
+    <!-- angular application -->
+    <script src='app/js/app.js'></script>
+    <script src='app/js/services/services.js'></script>
+    <script src='app/js/controllers/controllers.js'></script>
+    <script src='app/js/filters/filters.js'></script>
+    <script src='app/js/directives/directives.js'></script>
+    <!-- angular testing -->
+    <!--
+    <script src='js/test/test.js'></script>
+    <script src='js/test/mock.js'></script>
+    <script src='js/test/e2e.mock.js'></script>
+        -->
+    <!-- templates -->
+    <script type='text/ng-template' id='index.tpl'>
+        <section>
+			<header>
+				<h2>{{title}}</h2>
+			</header>
+            <article>
+                {{ 1 + 1 }}
+				<p>This is a index page template.</p>
+			</article>
+		</section>
+    </script>
+
+    <script type='text/ng-template' id='first.tpl'>
+		<section>
+			<header>
+				<h2>{{title}}</h2>
+			</header>
+			<article>
+				<p>{{content}}</p>
+			</article>
+		</section>
+    </script>
+
+    <script type='text/ng-template' id='second.tpl'>
+		<section>
+			<header>
+				<h2>{{title}}</h2>
+			</header>
+			<article>
+				<p>{{content}}</p>
+			</article>
+		</section>
+    </script>
+
+    <script type='text/ng-template' id='third.tpl'>
+		<section>
+			<header>
+				<h2>{{title}}</h2>
+			</header>
+			<article>
+				<p>{{content}}</p>
+			</article>
+		</section>
+    </script>
+
+    <script type='text/ng-template' id='notFound404.tpl'>
+		<h2>Error 404: Requested page not found</h2>
+    </script>
+</body>
+</html>
