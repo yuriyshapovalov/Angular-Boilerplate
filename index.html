@@ -1,62 +1,88 @@
 <!doctype html>
 <html>
-    <head>
-        <title>Angular Boilerplate</title>
-    </head>
-    <body data-ng-app='app' data-ng-controller='base.ctrl'>
-        <header>
-            <h1>Angular Boilerplate</h1>
-        </header>
-        
-        <nav>
-            <ul>
-                <li><a href='#first'>First</a></li>
-                <li><a href='#second'>Second</a></li>
-                <li><a href='#third'>Third</a></li>
-            </ul>
-        </nav>
+<head>
+    <title>Angular Boilerplate</title>
+</head>
+<body data-ng-app='app'>
+    <header>
+        <h1><a href="/">Angular Boilerplate</a></h1>
+    </header>
 
-        <section id='container'>
-            <div data-ng-view=''></div>
-        </section>
+    <nav>
+        <ul>
+            <li><a href='#/first'>First</a></li>
+            <li><a href='#/second'>Second</a></li>
+            <li><a href='#/third'>Third</a></li>
+        </ul>
+    </nav>
 
-        <!-- TODO: Should be bundled and minified -->
-        <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js'></script>
-        <!-- angular application -->
-        <script src='app/services/services.js'></script>
-        <script src='app/controllers/controllers.js'></script>
-        <script src='app/filters/filters.js'></script>
-        <script src='app/directives/directives.js'></script>
-        <script src='app/app.js'></script>
-        <!-- angular testing -->
-        <script src='test/test.js'></script>
-        <script src='test/mock.js'></script>
-	<script src='test/e2e.mock.js'></script>
-	<!-- templates -->
-	<script typee='text/ng-template' id='index.tpl'>
-		<section>
+    <section id='container'>
+        <div data-ng-view=''></div>
+    </section>
+
+    <!-- TODO: Should be bundled and minified -->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js'></script>
+    <!-- angular application -->
+    <script src='app/app.js'></script>
+    <script src='app/services/services.js'></script>
+    <script src='app/controllers/controllers.js'></script>
+    <script src='app/filters/filters.js'></script>
+    <script src='app/directives/directives.js'></script>
+    <!-- angular testing -->
+    <!--
+    <script src='test/test.js'></script>
+    <script src='test/mock.js'></script>
+    <script src='test/e2e.mock.js'></script>
+        -->
+    <!-- templates -->
+    <script type='text/ng-template' id='index.tpl'>
+        <section>
 			<header>
-				<h2>Index page</h2>
+				<h2>{{title}}</h2>
 			</header>
-			<article>
+            <article>
+                {{ 1 + 1 }}
 				<p>This is a index page template.</p>
 			</article>
 		</section>
-	</script>
+    </script>
 
-	<script type='text-ng-template' id='contacts.tpl'>
+    <script type='text/ng-template' id='first.tpl'>
 		<section>
 			<header>
-				<h2>Contacts</h2>
+				<h2>{{title}}</h2>
 			</header>
 			<article>
-				<p>Our contact information will be below
+				<p>{{content}}</p>
 			</article>
 		</section>
-	</script>
+    </script>
 
-	<script type='text/ng-template' id='notFound404.tpl'>
-		<h2>Error 404: Requestedd page not found</h2>
-	</script>
-    </body>
+    <script type='text/ng-template' id='second.tpl'>
+		<section>
+			<header>
+				<h2>{{title}}</h2>
+			</header>
+			<article>
+				<p>{{content}}</p>
+			</article>
+		</section>
+    </script>
+
+    <script type='text/ng-template' id='third.tpl'>
+		<section>
+			<header>
+				<h2>{{title}}</h2>
+			</header>
+			<article>
+				<p>{{content}}</p>
+			</article>
+		</section>
+    </script>
+
+    <script type='text/ng-template' id='notFound404.tpl'>
+		<h2>Error 404: Requested page not found</h2>
+    </script>
+</body>
 </html>

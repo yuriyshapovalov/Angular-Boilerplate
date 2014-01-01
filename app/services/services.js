@@ -1,11 +1,11 @@
 'use strict'
 
-var services = angular.module('app.services')
+var services = angular.module('app.services', []);
 
-services.factory('someService', function() {
-    
+services.factory('someService', function () {
+
     var someData = 42;
-    
+
 
     function someFunc() {
         return 'some Function has been called';
@@ -15,5 +15,5 @@ services.factory('someService', function() {
         data: someData,
         veryCoolFunction: someFunc
     }
-})
+});
 
