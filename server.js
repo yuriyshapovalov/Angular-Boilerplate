@@ -2,12 +2,11 @@ var http = require("http"),
     url = require("url"),
     path = require("path"),
     fs = require("fs")
-    port = process.argv[2] || 8888;
+    port = process.argv[2] || 8999;
  
 http.createServer(function(request, response) {
  
-  var uri = url.parse(request.url).pathname
-    , filename = path.join(process.cwd(), uri);
+  var uri = url.parse(request.url).pathname, filename = path.join(process.cwd(), uri);
   
   path.exists(filename, function(exists) {
     if(!exists) {
@@ -24,12 +23,14 @@ http.createServer(function(request, response) {
         response.writeHead(500, {"Content-Type": "text/plain"});
         response.write(err + "\n");
         response.end();
+        console.log('Error: ' + err);
         return;
       }
  
       response.writeHead(200);
       response.write(file, "binary");
       response.end();
+      console.log('GET: ' + filename);
     });
   });
 }).listen(parseInt(port, 10));
