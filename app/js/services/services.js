@@ -1,6 +1,6 @@
-var services = angular.module('app.services', []);
+angular.module('app.services', [])
 
-services.factory('someService', function () {
+.factory('someService', function () {
     'use strict';
 
     var someData = 42;

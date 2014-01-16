@@ -1,7 +1,8 @@
-var app = angular.module('app', ['app.controllers', 'ngRoute']);
+angular.module('app', ['app.controllers', 'ngRoute'])
+.config(['$routeProvider', '$locationProvider',
+    function ($routeProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
 
-app.config(['$routeProvider',
-    function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'index.tpl',
