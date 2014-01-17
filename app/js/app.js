@@ -1,5 +1,15 @@
+/**
+ * Angular Boilerplate application bootstraper
+ * 
+ * @author Yuriy Shapovalov (shapovalov.yuri@gmail.com)
+ * @module app
+ */
 angular.module('app', ['app.controllers', 'ngRoute'])
+
 .config(['$routeProvider', '$locationProvider',
+    /**
+     * Application frontend routing settings
+     */
     function ($routeProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
 
