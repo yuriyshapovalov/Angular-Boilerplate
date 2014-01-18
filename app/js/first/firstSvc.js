@@ -1,12 +1,13 @@
 /**
- * Application services
- * @author Yuriy Shapovalov (shapovalov.yuri@gmail.com)
- * @module app.services
+ * First component service module
+ * author Yuriy Shapovalov (shapovalov.yuri@gmail.com)
+ * module svc.first
  */
-angular.module('app.services', ['ngResource'])
+
+angular.module('svc.first', ['ngResource'])
 
     .factory('FirstSvc', [
-        '$resource', 
+        '$resource',
         function ($resource) {
             'use strict';
 
@@ -20,12 +21,4 @@ angular.module('app.services', ['ngResource'])
                 }
             });
 
-        }])
-
-    .factory('SecondSvc', [
-        '$resource',
-        function ($resource) {
-            'use strict';
-
-            return $resource('/api/second');
         }]);
