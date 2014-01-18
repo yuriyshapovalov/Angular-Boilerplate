@@ -3,40 +3,39 @@
 <head>
     <title>Angular Boilerplate</title>
     <link rel='stylesheet' href='app/styles/lib/bootstrap.css' />
+    <link rel='stylesheet' href='app/styles/lib/ng-grid.css' />
+    <link rel='stylesheet' href='app/styles/styles.css' />
 </head>
 <body data-ng-app='appDev'>
 
-<nav class="navbar navbar-default" role="navigation">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/">Angular boilerplate</a>
-  </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Angular boilerplate</a>
+        </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li><a href='#/first'>First</a></li>
-        <li><a href='#/second'>Second</a></li>
-        <li><a href='#/third'>Third</a></li>
-    </ul>
-  </div><!-- /.navbar-collapse -->
-</nav>
-    
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href='#/first'>First</a></li>
+                <li><a href='#/second'>Second</a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </nav>
+
     <nav>
         <ul class='nav nav-pills'>
-            
         </ul>
     </nav>
-    
-    <div data-ng-view='' class='container'></div>
 
-    <footer class='navbar-fixed-bottom'>&copy; 2014</footer>
+    <div data-ng-view='' class='container'></div>
 
     <!-- TODO: Should be bundled and minified -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -45,6 +44,7 @@
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-mocks.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.js'></script>
     <script src='../lib/bootstrap.js'></script>
+    <script src='../lib/ng-grid.js'></script>
     <!-- angular application -->
     <script src='app/js/app.js'></script>
     <script src='app/js/services/services.js'></script>
@@ -54,60 +54,79 @@
     <!-- angular testing -->
     <script src='test/mock.js'></script>
     <script src='test/e2e.mock.js'></script>
-        
+    <script src='test/e2e-mocks/firstMock.js'></script>
+    <script src='test/e2e-mocks/secondMock.js'></script>
+
     <!-- templates -->
     <script type='text/ng-template' id='index.tpl'>
         <div class='row'>
-        <section class='col-md-12'>
-			<header class=''>
-				<h2>{{title}}</h2>
-			</header>
-            <article>
-				<p>This is a index page template.</p>
-			</article>
+            <section class='col-md-12'>
+                <header class=''>
+                    <h2>{{title}}</h2>
+                </header>
+                <article>
+                    <p>{{content}}</p>
+                </article>
+            </section>
+        </div>
+
+        <div class='row'>
+            <section class='col-md-6 widget'>
+                <h3>First grid</h3>
+                <div class='gridStyle' ng-grid='firstGridOptions'></div>
+            </section>
+
+            <section class='col-md-6 widget'>
+                <h3>Second grid</h3>
+                <div class='gridStyle' ng-grid='secondGridOptions'></div>
             </section>
         </div>
     </script>
 
     <script type='text/ng-template' id='first.tpl'>
-		<section>
-			<header>
-				<h2>{{title}}</h2>
-			</header>
-			<article>
-				<p>{{content}}</p>
-            </article>
-            <ul ng-repeat='item in list'>
-                <li>{{item.id}}</li>
-                <li>{{item.name}}</li>
-            </ul>   
-		</section>
+        <div class='row'>
+            <section class='col-md-12'>
+                <header>
+                    <h2>{{title}}</h2>
+                </header>
+                <article>
+                    <p>{{content}}</p>
+                </article>
+            </section>
+        </div>
+
+        <div class='row'>
+            <section class='col-md-12'>
+                <div class='gridStyle' ng-grid='firstGridOptions'></div>
+            </section>
+        </div>
     </script>
 
     <script type='text/ng-template' id='second.tpl'>
-		<section>
-			<header>
-				<h2>{{title}}</h2>
-			</header>
-			<article>
-				<p>{{content}}</p>
-			</article>
-		</section>
-    </script>
+        <div class='row'>
+            <section class='col-md-12'>
+                <header>
+                    <h2>{{title}}</h2>
+                </header>
+                <article>
+                    <p>{{content}}</p>
+                </article>
+            </section>
+        </div>
 
-    <script type='text/ng-template' id='third.tpl'>
-		<section>
-			<header>
-				<h2>{{title}}</h2>
-			</header>
-			<article>
-				<p>{{content}}</p>
-			</article>
-		</section>
+        <div class='row'>
+            <section class='col-md-12'>
+                <div class='gridStyle' ng-grid='secondGridOptions'></div>
+            </section>
+        </div>
     </script>
 
     <script type='text/ng-template' id='notFound404.tpl'>
-		<h2>Error 404: Requested page not found</h2>
+        <div class='row'>
+            <section class='col-md-12'>
+                <h2>Error 404: Requested page not found</h2>
+            </section>
+        </div>
     </script>
 </body>
 </html>

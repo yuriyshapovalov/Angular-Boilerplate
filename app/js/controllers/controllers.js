@@ -9,10 +9,39 @@ angular.module('app.controllers', ['app.services'])
      * Index page controller
      */
     .controller('IndexCtrl', [
-        '$scope', 
-        function ($scope) {
+        '$scope',
+        'FirstSvc',
+        'SecondSvc',
+        function ($scope, FirstSvc, SecondSvc) {
             'use strict';
-            $scope.title = 'Home page';
+
+            $scope.firstList = [];
+            $scope.secondList = [];
+
+            $scope.firstList = FirstSvc.query();
+            $scope.secondList = SecondSvc.query();
+
+            $scope.firstGridOptions = {
+                data: 'firstList',
+                columnDefs: [
+                    { field: 'id', displayName: 'ID' },
+                    { field: 'name', displayName: 'Name' },
+                    { field: 'description', displayName: 'Description' },
+                ]
+            };
+
+            $scope.secondGridOptions = {
+                data: 'secondList',
+                columnDefs: [
+                    { field: 'id', displayName: 'ID' },
+                    { field: 'product', displayName: 'Product' },
+                    { field: 'cost', displayName: 'Cost' },
+                    { field: 'description', displayName: 'Description' }
+                ]
+            };
+
+            $scope.title = 'Start page';
+            $scope.content = 'Boilerplate application for Single Page Application quick start'
         }])
 
     /**
@@ -24,32 +53,46 @@ angular.module('app.controllers', ['app.services'])
         function ($scope, FirstSvc) {
             'use strict';
 
-            var firstList = FirstSvc.query();
-            $scope.list = firstList;
+            $scope.list = [];
+            $scope.list = FirstSvc.query();
+
+            $scope.firstGridOptions = {
+                data: 'list',
+                columnDefs: [
+                    { field: 'id', displayName: 'ID' },
+                    { field: 'name', displayName: 'Name' },
+                    { field: 'description', displayName: 'Description' },
+                ]
+            };
+
             $scope.title = 'First page';
-            $scope.content = "This is a content of first page";
+            $scope.content = "";
         }])
 
     /**
      * Second page controller
      */
     .controller('SecondCtrl', [
-        '$scope', 
-        function ($scope) {
+        '$scope',
+        'SecondSvc',
+        function ($scope, SecondSvc) {
             'use strict';
-            $scope.title = 'Second page';
-            $scope.content = "This is a content of second page";
-        }])
 
-    /**
-     * Third page controller
-     */
-    .controller('ThirdCtrl', [
-        '$scope', 
-        function ($scope) {
-            'use strict';
-            $scope.title = 'Third page';
-            $scope.content = "This is a content of third page";
+            $scope.list = [];
+            $scope.list = SecondSvc.query();
+
+            $scope.secondGridOptions = {
+                data: 'list',
+                columnDefs: [
+                    { field: 'id', displayName: 'ID' },
+                    { field: 'product', displayName: 'Product' },
+                    { field: 'cost', displayName: 'Cost' },
+                    { field: 'description', displayName: 'Description' }
+                ]
+            };
+
+            $scope.title = 'Second page';
+            $scope.content = "";
         }])
 
     /**

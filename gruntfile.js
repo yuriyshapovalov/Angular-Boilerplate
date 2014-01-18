@@ -6,7 +6,7 @@ module.exports = function(grunt) {
                 src: 'app/js/**/*.js',
                 options: {
                     specs: 'test/test.js',
-                    vendor: 'lib/*.js'
+                    vendor: ['lib/angular.js', 'lib/jquery.js']
                 }
             }
         },

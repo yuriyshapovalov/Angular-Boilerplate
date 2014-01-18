@@ -10,7 +10,22 @@ angular.module('app.services', ['ngResource'])
         function ($resource) {
             'use strict';
 
-            //return [{id: 1, name: 'test1'}, {id: 2, name: 'test2'}];
-            return $resource('/api/first');
+            return $resource('/api/first', {}, {
+                query: {
+                    method: 'GET',
+                    isArray: true,
+                    transformResponse: function (data, headersGetter) {
+                        return data;
+                    }
+                }
+            });
 
+        }])
+
+    .factory('SecondSvc', [
+        '$resource',
+        function ($resource) {
+            'use strict';
+
+            return $resource('/api/second');
         }]);

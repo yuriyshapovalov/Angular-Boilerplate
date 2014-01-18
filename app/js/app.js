@@ -4,7 +4,7 @@
  * @author Yuriy Shapovalov (shapovalov.yuri@gmail.com)
  * @module app
  */
-angular.module('app', ['app.controllers', 'ngRoute'])
+angular.module('app', ['app.controllers', 'ngRoute', 'ngGrid'])
 
 .config(['$routeProvider',
     /**
@@ -24,10 +24,6 @@ angular.module('app', ['app.controllers', 'ngRoute'])
             .when('/second', {
                 templateUrl: 'second.tpl',
                 controller: 'SecondCtrl'
-            })
-            .when('/third', {
-                templateUrl: 'third.tpl',
-                controller: 'ThirdCtrl'
             })
             .otherwise({
                 templateUrl: 'notFound404.tpl',
