@@ -2,20 +2,15 @@
  * Angular end-to-end mocks for backendless development
  */
 
-angular.module('appDev', ['app', 'ngMockE2E'])
+angular.module('appDev', ['app', 'ngMockE2E', 'mock.first'])
 	.run(function($httpBackend) {
         
-        var firstElements = [
-            { id: 1, name: 'Element 1', description: 'This is an element 1' },
-            { id: 2, name: 'Element 2', description: 'This is an element 2' },
-            { id: 3, name: 'Element 3', description: 'This is an element 3' },
-            { id: 4, name: 'Element 4', description: 'This is an element 4' }
-        ];
-
         var secondElements = [
             { id: 1, title: 'second 1' },
             { id: 2, title: 'second 2' }
         ];
+
+        var firstElements = $injector.get('FirstElementList');
 
         $httpBackend.whenGET('/api/first').respond(firstElements);
 
