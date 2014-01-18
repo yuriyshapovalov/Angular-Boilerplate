@@ -6,12 +6,11 @@
  */
 angular.module('app', ['app.controllers', 'ngRoute'])
 
-.config(['$routeProvider', '$locationProvider',
+.config(['$routeProvider',
     /**
      * Application frontend routing settings
      */
-    function ($routeProvider, $locationProvider) {
-        $locationProvider.html5Mode(true);
+    function ($routeProvider) {
 
         $routeProvider
             .when('/', {

@@ -3,7 +3,7 @@
  * @author Yuriy Shapovalov (shapovalov.yuri@gmail.com)
  * @module app.controllers
  */
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['app.services'])
 
     /**
      * Index page controller
@@ -20,8 +20,12 @@ angular.module('app.controllers', [])
      */
     .controller('FirstCtrl', [
         '$scope', 
-        function ($scope) {
+        'FirstSvc',
+        function ($scope, FirstSvc) {
             'use strict';
+
+            var firstList = FirstSvc.query();
+            $scope.list = firstList;
             $scope.title = 'First page';
             $scope.content = "This is a content of first page";
         }])

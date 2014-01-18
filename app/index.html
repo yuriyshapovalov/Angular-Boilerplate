@@ -4,7 +4,7 @@
     <title>Angular Boilerplate</title>
     <link rel='stylesheet' href='app/styles/lib/bootstrap.css' />
 </head>
-<body data-ng-app='app'>
+<body data-ng-app='appDev'>
 
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,9 +21,9 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a href='/first'>First</a></li>
-        <li><a href='/second'>Second</a></li>
-        <li><a href='/third'>Third</a></li>
+      <li><a href='#/first'>First</a></li>
+        <li><a href='#/second'>Second</a></li>
+        <li><a href='#/third'>Third</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -33,15 +33,17 @@
             
         </ul>
     </nav>
-
     
     <div data-ng-view='' class='container'></div>
-    
+
+    <footer class='navbar-fixed-bottom'>&copy; 2014</footer>
 
     <!-- TODO: Should be bundled and minified -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-route.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-mocks.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-resource.js'></script>
     <script src='../lib/bootstrap.js'></script>
     <!-- angular application -->
     <script src='app/js/app.js'></script>
@@ -50,11 +52,9 @@
     <script src='app/js/filters/filters.js'></script>
     <script src='app/js/directives/directives.js'></script>
     <!-- angular testing -->
-    <!--
-    <script src='js/test/test.js'></script>
-    <script src='js/test/mock.js'></script>
-    <script src='js/test/e2e.mock.js'></script>
-        -->
+    <script src='test/mock.js'></script>
+    <script src='test/e2e.mock.js'></script>
+        
     <!-- templates -->
     <script type='text/ng-template' id='index.tpl'>
         <div class='row'>
@@ -63,7 +63,6 @@
 				<h2>{{title}}</h2>
 			</header>
             <article>
-                {{ 1 + 1 }}
 				<p>This is a index page template.</p>
 			</article>
             </section>
@@ -77,7 +76,11 @@
 			</header>
 			<article>
 				<p>{{content}}</p>
-			</article>
+            </article>
+            <ul ng-repeat='item in list'>
+                <li>{{item.id}}</li>
+                <li>{{item.name}}</li>
+            </ul>   
 		</section>
     </script>
 
