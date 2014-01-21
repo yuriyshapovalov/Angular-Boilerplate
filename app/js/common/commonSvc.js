@@ -5,3 +5,7 @@
  */
 
 angular.module('svc.common', [])
+
+    .factory('log', function(message, code){
+        // log event
+    })

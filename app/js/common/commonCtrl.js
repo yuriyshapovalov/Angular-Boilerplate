@@ -4,7 +4,7 @@
  * module ctrl.common
  */
 
-angular.module('ctrl.common', ['svc.first', 'svc.second'])
+angular.module('ctrl.common', [])
 
     /**
      * 404 Page Not Found controller
