@@ -15,4 +15,8 @@ Tests are divided into:
 * Acceptance Tests ( + optional UI Tests )
 * Performance Tests
 * Post-deployment Tests
-* 
+
+Integration with following frameworks:
+* Jenkins
+* Grunt
+* Jasmine
